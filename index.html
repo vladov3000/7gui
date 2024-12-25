@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>7 GUIs</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link href="styles.css" rel="stylesheet" />
+  </head>
+  <body>
+    <header>
+      <h1>7 GUIs</h1>
+      <p><i>In Vanilla Javscript</i></p>
+    </header>
+    <section>
+      <h2>Introduction</h2>
+      <p><a href="https://eugenkiss.github.io/7guis/tasks">7 GUIs</a> is a user interface programming benchmark. It specifies a list of simple graphical interfaces that any good UI framework should make easy to implement. I am working on a product with a browser-based UI and was hitting "scaling" issues with vanilla javascript. For a myriad of reasons, I do not want to use React or other web frameworks. However, it was very clear html/css/javascript <b>sucks</b>. I decided to give the browser one last chance for redemption by implementing 7 GUIs in vanilla javascript.</p>
+    </section>
+    <section>
+      <h2>Results</h2>
+      <p>I think the fundamental problem is that the DOM is "retained" mode. Namely, it is much easier as a programmer to rebuild the ui as a function of your application state than carefully apply deltas from user input. Indeed, one of my observations was that implementing a <code>render</code> function for a widget, and then calling it whenever the state is mutated is much easier. The performance implications of doing this is unclear however, since these widgets are to small to benchmark.</p>
+      <p>Retrieving references to the DOM is also quite uncomfortable. You can call <code>document.getElementByClassName</code>, but this is quite verbose so I use a wrapper function simply called <code>element</code>. I then implemented a batch <code>load(parent, classNames)</code> that loads all the relevant children from a parent and returns them. The alternative to doing so was loading all the references to DOM elements as fields in your main object representing the component, however now you need to pass your component around everywhere.</p>
+      <p>Lastly, javascript is an absurd language. Taking a reference to a class method e.g. <code>this.myMethod</code> will not bind <code>this</code> correctly when calling that reference. I understand javascript's prototype system well enough to understand why this is the case, but the end result is completely unnatural semantics for the programmer. Luckily, I only require for-loops, if-statements, and arrays to be productive, so most of the language idiosyncrasies do not effect me much.</p>
+    </section>
+    <section>
+      <h2>Demo</h2>
+      <p>An observant visitor will notice that there are only 6 guis and the undo/redo button in the "Circle Drawer" application is unintuitive. Truthfully, web programming is incredibly frusturating. I do not see how my perspective will change by implementing an extra spreadsheet application.</p>
+      <div class="demoGrid">
+        <iframe src="counter"></iframe>
+        <iframe src="temperatureConverter"></iframe>
+        <iframe src="flightBooker"></iframe>
+        <iframe src="timer"></iframe>
+        <iframe src="crud"></iframe>
+        <iframe src="circleDrawer"></iframe>
+      </div>
+    </section>
+  </body>
+</html>

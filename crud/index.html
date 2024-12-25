@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>CRUD</title>
+    <script type="module" src="main.js"></script>
+    <link href="styles.css" rel="stylesheet" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+  </head>
+  <body>
+    <div class="crud verticalLayout">
+      <label>
+	Filter prefix:
+	<input class="prefixInput" />
+      </label>
+      <div class="horizontalLayout">
+	<select class="nameSelector" size="3" style="height: 6rem">
+	</select>
+	<div class="verticalLayout">
+	  <label>
+	    <span>Name:</span>
+	    <input class="nameInput" />
+	  </label>
+	  <label>
+	    <span>Surname:</span>
+	    <input class="surnameInput" />
+	  </label>
+	</div>
+      </div>
+      <div>
+	<button class="createButton">Create</button>
+	<button class="updateButton" disabled>Update</button>
+	<button class="deleteButton" disabled>Delete</button>
+      </div>
+    </div>
+  </body>
+</html>

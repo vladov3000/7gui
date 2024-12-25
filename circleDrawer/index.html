@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Circle Drawer</title>
+    <script type="module" src="main.js"></script>
+    <link href="styles.css" rel="stylesheet" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+  </head>
+  <body>
+    <div id="circleDrawer">
+      <div id="undoBox">
+	<button id="undoButton">Undo</button>
+	<button id="redoButton">Redo</button>
+      </div>
+      <svg id="canvas" width="300" height="200"></svg>
+      <div id="diameterPopup">
+	<label id="diameterLabel" for="diameterSlider">Adjust the diameter of circle at (0, 0).</label>
+	<input id="diameterSlider" type="range" />
+      </div>
+    </div>
+  </body>
+</html>

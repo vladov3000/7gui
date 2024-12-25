@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Flight Booker</title>
+    <script src="main.js"></script>
+    <link href="styles.css" rel="stylesheet" />
+  </head>
+  <body>
+    <div class="booking">
+      <select class="typeSelector">
+	<option value="oneWay">one-way flight</option>
+	<option value="return">return flight</option>
+      </select>
+      <input  class="startDate malformedInput" type="date" />
+      <input  class="endDate" type="date" disabled />
+      <button class="bookButton" disabled>Book</button>
+      <p class="message"></p>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,9 @@
+.demoGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(max(22.5rem, 50%), 1fr));
+}
+
+iframe {
+    width: 100%;
+    height: 20rem;
+}
